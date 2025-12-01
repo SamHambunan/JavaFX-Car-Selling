@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.carselling.controllers.CarManagementController">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+         <children>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBack" text="← Back" style="-fx-background-color: #34495e; -fx-text-fill: white;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="titleLabel" text="Add New Car" textFill="white">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+         <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #f5f5f5; -fx-padding: 30;">
+            <BorderPane.margin>
+               <Insets />
+            </BorderPane.margin>
+            <padding>
+               <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+            <children>
+               <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+                  <padding>
+                     <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                  </padding>
+                  <children>
+                     <HBox spacing="30.0" HBox.hgrow="ALWAYS">
+                        <children>
+                           <VBox spacing="15.0" HBox.hgrow="ALWAYS" minWidth="300.0">
+                              <children>
+                                 <Label text="Brand: *" />
+                                 <TextField fx:id="brandField" promptText="e.g., Toyota" maxWidth="Infinity" />
+                                 
+                                 <Label text="Model: *" />
+                                 <TextField fx:id="modelField" promptText="e.g., Camry" maxWidth="Infinity" />
+                                 
+                                 <Label text="Year: *" />
+                                 <TextField fx:id="yearField" promptText="e.g., 2020" maxWidth="Infinity" />
+                                 
+                                 <Label text="Price: *" />
+                                 <TextField fx:id="priceField" promptText="e.g., 25000" maxWidth="Infinity" />
+                                 
+                                 <Label text="Mileage:" />
+                                 <TextField fx:id="mileageField" promptText="e.g., 50000" maxWidth="Infinity" />
+                                 
+                                 <Label text="Color:" />
+                                 <TextField fx:id="colorField" promptText="e.g., Red" maxWidth="Infinity" />
+                              </children>
+                           </VBox>
+                           
+                           <VBox spacing="15.0" HBox.hgrow="ALWAYS" minWidth="300.0">
+                              <children>
+                                 <Label text="Description:" />
+                                 <TextArea fx:id="descriptionField" prefRowCount="8" promptText="Enter car description..." wrapText="true" maxWidth="Infinity" />
+                                 
+                                 <Label text="Car Image:" />
+                                 <HBox spacing="10.0">
+                                    <children>
+                                       <Button fx:id="browseImageButton" mnemonicParsing="false" onAction="#handleBrowseImage" text="Browse Image" style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+                                       <Label fx:id="imagePathLabel" text="No image selected" textFill="#7f8c8d" wrapText="true" HBox.hgrow="ALWAYS" />
+                                    </children>
+                                 </HBox>
+                                 
+                                 <ImageView fx:id="imagePreview" fitHeight="200.0" fitWidth="300.0" preserveRatio="true" style="-fx-background-color: #ecf0f1; -fx-border-color: #bdc3c7; -fx-border-width: 1;" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                     
+                     <Label fx:id="errorLabel" textFill="#e74c3c" visible="false" wrapText="true" />
+                     
+                     <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                        <children>
+                           <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" style="-fx-background-color: #95a5a6; -fx-text-fill: white;" />
+                           <Button fx:id="saveButton" mnemonicParsing="false" onAction="#handleSave" text="Save" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" />
+                        </children>
+                     </HBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+      </ScrollPane>
+   </center>
+</BorderPane>
+

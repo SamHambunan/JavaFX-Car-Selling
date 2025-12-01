@@ -1,0 +1,1 @@
+java -jar target/car-selling-app-1.0.0.jar

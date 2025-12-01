@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.carselling.controllers.LoginController">
+   <center>
+      <VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #f5f5f5;" maxWidth="500.0" maxHeight="700.0">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+         </padding>
+         <children>
+            <Label text="Create Account" textFill="#2c3e50">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+            
+            <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30;">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               
+               <Label text="Username:" />
+               <TextField fx:id="regUsernameField" promptText="Enter username" />
+               
+               <Label text="Email:" />
+               <TextField fx:id="regEmailField" promptText="Enter email" />
+               
+               <Label text="Password:" />
+               <PasswordField fx:id="regPasswordField" promptText="Enter password" />
+               
+               <Label text="Confirm Password:" />
+               <PasswordField fx:id="regConfirmPasswordField" promptText="Confirm password" />
+               
+               <Label fx:id="regErrorLabel" textFill="#e74c3c" visible="false" wrapText="true" />
+               
+               <Button fx:id="registerSubmitButton" mnemonicParsing="false" onAction="#handleRegisterSubmit" text="Register" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+               </Button>
+               
+               <Separator />
+               
+               <Label text="Already have an account?" />
+               <Button fx:id="backToLoginButton" mnemonicParsing="false" onAction="#handleBackToLogin" text="Back to Login" style="-fx-background-color: #95a5a6; -fx-text-fill: white;" />
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
+

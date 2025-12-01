@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.carselling.controllers.HomeController">
+   <top>
+      <VBox>
+         <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #2c3e50; -fx-padding: 15;">
+            <children>
+               <Label text="Car Selling App" textFill="white">
+                  <font>
+                     <Font name="System Bold" size="20.0" />
+                  </font>
+               </Label>
+               <Region HBox.hgrow="ALWAYS" />
+               <Button fx:id="myCarsButton" mnemonicParsing="false" onAction="#handleMyCars" text="My Cars" style="-fx-background-color: #34495e; -fx-text-fill: white;" visible="false" />
+               <Button fx:id="watchlistButton" mnemonicParsing="false" onAction="#handleWatchlist" text="Watchlist" style="-fx-background-color: #34495e; -fx-text-fill: white;" visible="false" />
+               <Button fx:id="addCarButton" mnemonicParsing="false" onAction="#handleAddCar" text="Add Car" disable="false" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-cursor: hand;" visible="false" />
+               <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLogin" text="Login" style="-fx-background-color: #3498db; -fx-text-fill: white;" />
+               <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" text="Logout" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" visible="false" />
+            </children>
+         </HBox>
+         
+         <VBox spacing="15.0" style="-fx-background-color: #ecf0f1; -fx-padding: 20;">
+            <padding>
+               <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+            <children>
+               <Label text="Search Cars" textFill="#2c3e50">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               
+               <GridPane hgap="10.0" vgap="10.0">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                     <Label text="Brand:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                     <TextField fx:id="searchBrandField" promptText="Brand" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                     
+                     <Label text="Model:" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                     <TextField fx:id="searchModelField" promptText="Model" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     
+                     <Label text="Year Range:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                     <HBox spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <children>
+                           <TextField fx:id="minYearField" promptText="Min" prefWidth="70.0" />
+                           <Label text="-" />
+                           <TextField fx:id="maxYearField" promptText="Max" prefWidth="70.0" />
+                        </children>
+                     </HBox>
+                     
+                     <Label text="Price Range:" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                     <HBox spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                        <children>
+                           <TextField fx:id="minPriceField" promptText="Min $" prefWidth="80.0" />
+                           <Label text="-" />
+                           <TextField fx:id="maxPriceField" promptText="Max $" prefWidth="80.0" />
+                        </children>
+                     </HBox>
+                     
+                     <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearch" text="Search" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  </children>
+               </GridPane>
+            </children>
+         </VBox>
+      </VBox>
+   </top>
+   <center>
+      <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+         <VBox fx:id="carsContainer" spacing="20.0" style="-fx-background-color: #f5f5f5; -fx-padding: 20;">
+            <padding>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+         </VBox>
+      </ScrollPane>
+   </center>
+</BorderPane>
+
